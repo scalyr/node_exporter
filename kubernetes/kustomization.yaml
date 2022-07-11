@@ -1,0 +1,6 @@
+namespace: monitoring
+
+resources:
+- node_exporter.yaml
+patchesStrategicMerge:
+- patches/scalyr-agent-pod-annotations.yaml
