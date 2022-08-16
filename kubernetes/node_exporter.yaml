@@ -49,12 +49,13 @@ spec:
           mountPropagation: HostToContainer
           name: root
           readOnly: true
-      # NOTE: We don't need to use host network since we mount host stuff inside
       hostNetwork: true
       hostPID: true
       nodeSelector:
         kubernetes.io/os: linux
       securityContext:
+        fsGroup: 65534
+        runAsGroup: 65534
         runAsNonRoot: true
         runAsUser: 65534
       volumes:
